@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>桌遊配套網站 Demo - 自動適配不同螢幕</title>
+  <style>
+    /* 全站設定 */
+    body {
+      font-family: 'Matisse Pro EB', sans-serif;
+      text-align: center;
+      margin: 20px;
+      background: white;
+      font-size: 2em;
+    }
+    .header-gif {
+      max-width: 60%;
+      height: auto;
+      display: block;
+      margin: 0 auto 20px;
+    }
+    /* 分數容器：使用 flex 排列所有分數框 */
+    .score-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    /* 分數框：包含標籤與輸入區 */
+    .score-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    /* 標籤圖片 */
+    .score-label {
+      max-width: 150px;  /* 調大圖片最大寬度 */
+      width: auto;
+      margin-bottom: 10px;
+    }
+    /* 輸入區：重疊的框與文字輸入 */
+    .score-input-group {
+      position: relative;
+      width: 150px;        /* 根據框.png 的實際寬度調整 */
+      height: 150px;       /* 根據框.png 的實際高度調整 */
+    }
+    /* 框.png 絕對定位於底層 */
+    .score-frame {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: auto;
+      z-index: 1;
+    }
+    /* 文字輸入框絕對定位在框上，向下偏移 */
+    .score-input {
+      position: absolute;
+      top: 70px;  /* 可依需求調整 */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      font-size: 1em;
+      text-align: center;
+      border: none;
+      background: transparent;
+      color: #000;
+      z-index: 2;
+    }
+    /* 虛擬骰子區 */
+    .dice {
+      width: 360px;
+      height: 360px;
+      margin: 100px auto;
+      position: relative;
+      cursor: pointer;
+    }
+    .dice img {
+      width: 100%;
+      height: 100%;
+    }
+    .roll-animation {
+      animation: roll 1s ease;
+    }
+    @keyframes roll {
+      0%   { transform: rotate(0deg); }
+      25%  { transform: rotate(90deg); }
+      50%  { transform: rotate(180deg); }
+      75%  { transform: rotate(270deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .toggle-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+    }
+    /* 手機與平板適配 */
+    @media screen and (max-width: 768px) {
+      .score-container {
+        justify-content: center;
+      }
+      .score-box {
+        width: 90vw;
+      }
+      .dice {
+        width: 80vw;
+        height: 80vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 標題 GIF -->
+  <img src="GIF/310學測戰爭.gif" alt="網站標題GIF" class="header-gif">
+  
+  <!-- 分數輸入區，國英數社自（可增資金） -->
+  <div class="score-container">
+    <div class="score-box">
+      <img src="國.png" alt="國" class="score-label">
+      <div class="score-input-group">
+        <img src="框.png" alt="框" class="score-frame">
+        <input type="text" id="score-guo" placeholder="0" class="score-input">
+      </div>
+    </div>
+    <div class="score-box">
+      <img src="英.png" alt="英" class="score-label">
+      <div class="score-input-group">
+        <img src="框.png" alt="框" class="score-frame">
+        <input type="text" id="score-ying" placeholder="0" class="score-input">
+      </div>
+    </div>
+    <div class="score-box">
+      <img src="數.png" alt="數" class="score-label">
+      <div class="score-input-group">
+        <img src="框.png" alt="框" class="score-frame">
+        <input type="text" id="score-shu" placeholder="0" class="score-input">
+      </div>
+    </div>
+    <div class="score-box">
+      <img src="自.png" alt="自" class="score-label">
+      <div class="score-input-group">
+        <img src="框.png" alt="框" class="score-frame">
+        <input type="text" id="score-zi" placeholder="0" class="score-input">
+      </div>
+    </div>
+    <div class="score-box">
+      <img src="社.png" alt="社" class="score-label">
+      <div class="score-input-group">
+        <img src="框.png" alt="框" class="score-frame">
+        <input type="text" id="score-she" placeholder="0" class="score-input">
+      </div>
+    
+    </div>
+    <div class="score-box">
+      <img src="資金.png" alt="資金" class="score-label">
+      <div class="score-input-group">
+        <img src="框.png" alt="框" class="score-frame">
+        <input type="text" id="score-money" placeholder="0" class="score-input">
+      </div>
+    </div>
+  </div>
+  
+  <!-- 虛擬骰子區 -->
+  <div class="dice" id="dice">
+    <img src="骰.png" alt="骰子" id="dice-img">
+  </div>
+  <div id="dice-result"></div>
+  
+  <!-- 音效開關 -->
+  <button class="toggle-btn" id="toggle-sound">關閉音效</button>
+  <audio id="dice-sound" src="骰.mp3"></audio>
+  
+  <script>
+    const dice = document.getElementById('dice');
+    const diceImg = document.getElementById('dice-img');
+    const diceResult = document.getElementById('dice-result');
+    const diceSound = document.getElementById('dice-sound');
+    const toggleSoundBtn = document.getElementById('toggle-sound');
+    let soundEnabled = true;
+    // 自定義骰子圖片
+    const diceImages = {
+      1: '骰1.png',
+      2: '骰2.png',
+      3: '骰3.png',
+      4: '骰4.png',
+      5: '骰5.png',
+      6: '骰6.png'
+    };
+    dice.addEventListener('click', () => {
+      if (soundEnabled) {
+        diceSound.currentTime = 0;
+        diceSound.play();
+      }
+      diceImg.src = '骰轉.png';
+      diceImg.classList.add('roll-animation');
+      const result = Math.floor(Math.random() * 6) + 1;
+      setTimeout(() => {
+        diceResult.textContent = '結果: ' + result;
+        diceImg.src = diceImages[result];
+        diceImg.classList.remove('roll-animation');
+      }, 1000);
+    });
+    toggleSoundBtn.addEventListener('click', () => {
+      soundEnabled = !soundEnabled;
+      toggleSoundBtn.textContent = soundEnabled ? '關閉音效' : '開啟音效';
+    });
+  </script>
+</body>
+</html>
