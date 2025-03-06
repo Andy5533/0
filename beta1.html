@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>桌遊配套網站 Demo - 自動適配不同螢幕</title>
   <style>
+    
     /* 全站設定 */
     body {
       font-family: 'Matisse Pro EB', sans-serif;
@@ -109,6 +110,71 @@
         height: 80vw;
       }
     }
+    
+    /* 薪資表樣式 */
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    
+    .salary-table {
+      font-family: 'Press Start 2P', cursive;
+      background-color: #222;
+      margin: 20px;
+      padding: 20px;
+      color: #fff;
+    }
+    .salary-table table {
+      width: 100%;
+      border-collapse: collapse;
+      background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+    }
+    .salary-table th,
+    .salary-table td {
+      padding: 12px;
+      text-align: center;
+      border: 2px solid #444;
+      color: white;
+    }
+    .salary-table th {
+      background: linear-gradient(135deg, #f39c12, #d35400);
+      animation: headerGlow 3s ease-in-out infinite alternate;
+      font-size: 14px;
+      text-shadow: 1px 1px 2px #000;
+    }
+    @keyframes headerGlow {
+      from { filter: brightness(1); }
+      to { filter: brightness(1.2); }
+    }
+    .salary-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.1);
+      animation: slideIn 0.8s ease forwards;
+    }
+    .salary-table tr:nth-child(odd) {
+      background: rgba(255, 255, 255, 0.05);
+      animation: slideIn 0.8s ease forwards;
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .salary-table tr:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.02);
+      transition: background 0.3s ease, transform 0.3s ease;
+      color: #e0f7fa;
+    }
+    .salary-table h1,
+    .salary-table h2 {
+      text-align: center;
+    }
+    .salary-table ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+    .salary-table li {
+      margin: 5px 0;
+    }
   </style>
 </head>
 <body>
@@ -171,6 +237,284 @@
   <!-- 音效開關 -->
   <button class="toggle-btn" id="toggle-sound">關閉音效</button>
   <audio id="dice-sound" src="骰.mp3"></audio>
+  
+  <!-- 薪資與學測需求表格 -->
+  <div class="salary-table">
+    <h1>科系薪資與學測需求</h1>
+    <table>
+      <tr>
+        <th>科系</th>
+        <th>起薪</th>
+        <th>漲薪倍率</th>
+        <th>國文</th>
+        <th>英文</th>
+        <th>數學</th>
+        <th>社會</th>
+        <th>自然</th>
+        <th>其他</th>
+      </tr>
+      <tr>
+        <td>醫牙</td>
+        <td>NT$80,000</td>
+        <td>NT$500</td>
+        <td>–</td>
+        <td>10</td>
+        <td>12</td>
+        <td>9</td>
+        <td>11</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>電資</td>
+        <td>NT$65,000</td>
+        <td>NT$1000</td>
+        <td>9</td>
+        <td>9</td>
+        <td>11</td>
+        <td>–</td>
+        <td>10</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>法律</td>
+        <td>NT$50,000</td>
+        <td>NT$600</td>
+        <td>10</td>
+        <td>9</td>
+        <td>–</td>
+        <td>12</td>
+        <td>–</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>藥學</td>
+        <td>NT$55,000</td>
+        <td>NT$700</td>
+        <td>–</td>
+        <td>10</td>
+        <td>11</td>
+        <td>–</td>
+        <td>11</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>土木</td>
+        <td>NT$45,000</td>
+        <td>NT$500</td>
+        <td>9</td>
+        <td>8</td>
+        <td>10</td>
+        <td>–</td>
+        <td>9</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>設計</td>
+        <td>NT$35,000</td>
+        <td>NT$400</td>
+        <td>8</td>
+        <td>8</td>
+        <td>–</td>
+        <td>10</td>
+        <td>–</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>外文</td>
+        <td>NT$30,000</td>
+        <td>NT$300</td>
+        <td>9</td>
+        <td>12</td>
+        <td>–</td>
+        <td>8</td>
+        <td>–</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>心理</td>
+        <td>NT$32,000</td>
+        <td>NT$350</td>
+        <td>9</td>
+        <td>9</td>
+        <td>–</td>
+        <td>10</td>
+        <td>–</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>中文</td>
+        <td>NT$28,000</td>
+        <td>NT$300</td>
+        <td>12</td>
+        <td>–</td>
+        <td>–</td>
+        <td>7</td>
+        <td>–</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>哲學</td>
+        <td>NT$25,000</td>
+        <td>NT$250</td>
+        <td>11</td>
+        <td>–</td>
+        <td>–</td>
+        <td>8</td>
+        <td>–</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>護理</td>
+        <td>NT$38,000</td>
+        <td>NT$350</td>
+        <td>–</td>
+        <td>9</td>
+        <td>–</td>
+        <td>10</td>
+        <td>8</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>資管</td>
+        <td>NT$40,000</td>
+        <td>NT$600</td>
+        <td>9</td>
+        <td>9</td>
+        <td>10</td>
+        <td>8</td>
+        <td>–</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>體育</td>
+        <td>NT$30,000</td>
+        <td>NT$200</td>
+        <td>7</td>
+        <td>6</td>
+        <td>–</td>
+        <td>9</td>
+        <td>–</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>音樂</td>
+        <td>NT$33,000</td>
+        <td>NT$250</td>
+        <td>8</td>
+        <td>10</td>
+        <td>–</td>
+        <td>6</td>
+        <td>–</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>美術</td>
+        <td>NT$32,000</td>
+        <td>NT$250</td>
+        <td>7</td>
+        <td>7</td>
+        <td>–</td>
+        <td>9</td>
+        <td>–</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>建築</td>
+        <td>NT$42,000</td>
+        <td>NT$550</td>
+        <td>9</td>
+        <td>9</td>
+        <td>11</td>
+        <td>–</td>
+        <td>9</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>國際企業</td>
+        <td>NT$45,000</td>
+        <td>NT$700</td>
+        <td>10</td>
+        <td>12</td>
+        <td>9</td>
+        <td>10</td>
+        <td>–</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>資安</td>
+        <td>NT$55,000</td>
+        <td>NT$900</td>
+        <td>9</td>
+        <td>9</td>
+        <td>12</td>
+        <td>–</td>
+        <td>10</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>遊戲設計</td>
+        <td>NT$38,000</td>
+        <td>NT$450</td>
+        <td>8</td>
+        <td>9</td>
+        <td>8</td>
+        <td>11</td>
+        <td>–</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>新聞傳播</td>
+        <td>NT$35,000</td>
+        <td>NT$350</td>
+        <td>9</td>
+        <td>11</td>
+        <td>–</td>
+        <td>7</td>
+        <td>–</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>公關</td>
+        <td>NT$33,000</td>
+        <td>NT$300</td>
+        <td>8</td>
+        <td>10</td>
+        <td>–</td>
+        <td>6</td>
+        <td>–</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>生物科技</td>
+        <td>NT$50,000</td>
+        <td>NT$800</td>
+        <td>10</td>
+        <td>9</td>
+        <td>11</td>
+        <td>–</td>
+        <td>10</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td>化學工程</td>
+        <td>NT$48,000</td>
+        <td>NT$750</td>
+        <td>9</td>
+        <td>8</td>
+        <td>12</td>
+        <td>–</td>
+        <td>9</td>
+        <td>–</td>
+      </tr>
+    </table>
+    <h2>規則</h2>
+    <ul>
+      <li>每個科系的「固定需求分數」為最低門檻，需達到該分數才能進入該科系。</li>
+      <li>若有採計的科目超過該科系的固定需求分數，每超出 1 級分可擲骰子 1 次。</li>
+      <li>所有骰子點數累計後，乘上該科系的「漲薪倍率」，即為該角色的額外加薪金額。</li>
+      <li>以(加薪+起薪+剩餘資金)決定勝負</li>
+    </ul>
+  </div>
   
   <script>
     const dice = document.getElementById('dice');
