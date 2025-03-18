@@ -224,7 +224,7 @@ document.getElementById('module-action').addEventListener('click', function() {
 ## 聯繫我們
 
 - **Email**: andy55335533@gmail.com
-- **GitHub**: [your-repo/open-modular-boardgame](https://github.com/your-repo/open-modular-boardgame)
+- **GitHub**: https://github.com/Andy5533/A-web-companion-tools-page-for-board-game-
 
 ---
 
