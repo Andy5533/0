@@ -226,4 +226,3 @@ document.getElementById('module-action').addEventListener('click', function() {
 ---
 
 自由模組桌遊配套平臺致力於打造一個美觀、易用且功能豐富的桌遊輔助工具，期待您的參與與貢獻，共同推動桌遊數位化新體驗！
-```
