@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳民桓 - 建築作品集選粹 | 東海大學建築系申請</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom styles if needed, primarily for font families */
+        body {
+            font-family: 'Noto Serif TC', serif;
+        }
+        h1, h2, h3, h4, h5, h6, .font-sans {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        /* Style for image placeholders */
+        .img-placeholder {
+            @apply bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400 aspect-video w-full rounded;
+            min-height: 200px; /* Ensure placeholder has some height */
+        }
+        /* Simple underline animation for nav */
+        .nav-link {
+            position: relative;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: currentColor; /* Use text color for underline */
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        /* Style adjustments for lists */
+        ul.list-disc {
+            @apply pl-6 space-y-1;
+        }
+        ol.list-decimal {
+            @apply pl-6 space-y-1;
+        }
+
+    </style>
+    <script>
+        // Theme toggle script
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark')
+        } else {
+          document.documentElement.classList.remove('dark')
+        }
+
+        function toggleTheme() {
+          const html = document.documentElement;
+          if (html.classList.contains('dark')) {
+            html.classList.remove('dark');
+            localStorage.theme = 'light';
+          } else {
+            html.classList.add('dark');
+            localStorage.theme = 'dark';
+          }
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div>
+                <a href="#top" class="text-xl font-bold font-sans text-sky-700 dark:text-sky-500">陳民桓 | 建築作品集選粹</a>
+            </div>
+            <div class="flex items-center space-x-6">
+                 <div class="hidden md:flex space-x-6 font-sans text-sm font-medium">
+                    <a href="#introduction" class="nav-link text-gray-700 dark:text-gray-300 hover:text-sky-700 dark:hover:text-sky-500">引文</a>
+                    <a href="#report" class="nav-link text-gray-700 dark:text-gray-300 hover:text-sky-700 dark:hover:text-sky-500">書面報告</a>
+                    <a href="#works" class="nav-link text-gray-700 dark:text-gray-300 hover:text-sky-700 dark:hover:text-sky-500">實作作品</a>
+                 </div>
+                <button onclick="toggleTheme()" aria-label="Toggle Dark Mode" class="text-gray-600 dark:text-gray-400 hover:text-sky-700 dark:hover:text-sky-500 transition-colors">
+                    <i class="fas fa-sun dark:hidden"></i>
+                    <i class="fas fa-moon hidden dark:inline"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12 md:py-16 lg:py-20 space-y-16 md:space-y-24">
+
+        <!-- Introduction Section -->
+        <section id="introduction" class="text-center max-w-3xl mx-auto">
+            <h1 class="text-3xl md:text-4xl font-bold font-sans mb-4 text-sky-800 dark:text-sky-400">陳民桓</h1>
+            <p class="text-lg font-medium font-sans text-gray-600 dark:text-gray-400 mb-6">國立金門高中 | 申請 東海大學建築系</p>
+
+            <h2 class="text-2xl font-semibold font-sans mb-4">引文</h2>
+            <div class="text-left space-y-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                <p>家的樣貌，是我對建築最初的啟蒙。從小在父親親手設計、建造的房子裡長大，空間的佈局、光影的流轉，無形中讓我深刻體會到設計如何形塑生活、承載情感。這份源於家庭的耳濡目染，點燃了我對建築世界的強烈好奇與嚮往。</p>
+                <p>從觀察周遭環境的建築語彙，到研讀《住宅外觀設計》並嘗試延伸自己的想法；從「坐的裝置」發想到設計金門高中的「候車亭」；乃至於美術、金門學課程中的創作，以及生活科技課的木工手作，每一次的學習與實踐，都是我探索空間、材質、結構與人之間關係的足跡。建築，對我而言不僅是技術與美學的融合，更是一種回應環境、關照人心的表達方式。</p>
+                <p>我深知東海大學建築系擁有悠久的歷史與豐厚的人文底蘊，其強調的實作精神與對建築本質的探討，正是我所追求的學習方向。這本作品集呈現了我現階段的學習成果與對建築的初步探索，記錄著我從啟蒙到嘗試的過程。我懷抱著對建築的熱情與執著，希望能有機會進入東海建築系，接受更專業的薰陶，學習如何創造出不僅堅固實用，更能觸動人心、改善生活的建築空間。</p>
+            </div>
+        </section>
+
+        <!-- Separator -->
+        <hr class="border-gray-200 dark:border-gray-700">
+
+        <!-- Book Report & Design Extension Section -->
+        <section id="report" class="space-y-12">
+            <h2 class="text-3xl font-bold font-sans text-center mb-8 md:mb-12">書面報告 / 設計研究</h2>
+
+            <article class="space-y-8">
+                <h3 class="text-2xl font-semibold font-sans text-sky-700 dark:text-sky-500">《住宅外觀設計》研讀心得與延伸設計</h3>
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
+                    <div class="space-y-4 text-base leading-relaxed text-gray-700 dark:text-gray-300">
+                        <h4 class="text-xl font-semibold font-sans mb-2">學習動機與啟發</h4>
+                        <p>從積木到建模，從觀察到分析。本書透過豐富的案例與圖片，讓我更直觀地感受建築的美學與機能，了解建築師在面對現實限制時的巧思與解決方案。特別受到書中關於空間開放性、光影運用、自然融合等概念的啟發。</p>
+                         <h4 class="text-xl font-semibold font-sans mt-6 mb-2">內容摘錄與分析 (概要)</h4>
+                         <ul class="list-disc">
+                            <li><span class="font-medium">開放空間：</span>探討留白、通透性、光與風的容器 (如柵欄結構)。</li>
+                            <li><span class="font-medium">植物與空間：</span>綠意整合 (綠牆、庭院) 對舒適度與生態的貢獻。</li>
+                            <li><span class="font-medium">適時適地：</span>基地條件 (氣候、地形) 對設計的影響，適應性設計。</li>
+                            <li><span class="font-medium">一體化：</span>從結構到細節的整體性，材質的表達力 (如清水混凝土)。</li>
+                            <li><span class="font-medium">燈光運用：</span>自然採光與人工照明如何塑造氛圍與機能。</li>
+                         </ul>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="img-placeholder">
+                            <span class="text-sm">《住宅外觀設計》書封 / 代表性案例圖片</span>
+                        </div>
+                         <p class="text-sm text-center text-gray-500 dark:text-gray-400">書籍封面或代表性案例圖片示意</p>
+                    </div>
+                </div>
+
+                 <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-start mt-12">
+                     <div class="space-y-4 order-2 md:order-1">
+                         <div class="img-placeholder">
+                            <span class="text-sm">個人延伸設計 3D 渲染圖 / 草圖</span>
+                        </div>
+                         <p class="text-sm text-center text-gray-500 dark:text-gray-400">延伸設計 3D 圖或手繪圖示意</p>
+                     </div>
+                     <div class="space-y-4 order-1 md:order-2 text-base leading-relaxed text-gray-700 dark:text-gray-300">
+                         <h4 class="text-xl font-semibold font-sans mb-2">個人延伸設計概念</h4>
+                         <p>受書本啟發，嘗試以日式風格為基礎，融合所學概念進行住宅外觀的延伸設計。著重於：</p>
+                         <ul class="list-disc">
+                             <li><span class="font-medium">半開放柵欄圍牆與庭院：</span>增加透氣性與光影層次，模糊室內外界線。</li>
+                             <li><span class="font-medium">大面開窗與落地窗：</span>最大化採光，引入庭院景觀。</li>
+                             <li><span class="font-medium">木格柵應用：</span>作為遮陽、視覺遮蔽及裝飾元素，應用於停車棚或陽台。</li>
+                             <li><span class="font-medium">燈光設計：</span>運用LED燈帶和庭園燈營造夜晚氛圍。</li>
+                             <li><span class="font-medium">植物整合：</span>透過庭院綠化和爬藤植物，使建築與自然對話。</li>
+                         </ul>
+                         <h4 class="text-xl font-semibold font-sans mt-6 mb-2">心得與反思</h4>
+                         <p>這次練習讓我體會到將理論概念轉化為具體設計的挑戰。從書中學習到建築師需考量的多面向因素，並在延伸設計中嘗試平衡美學、機能與環境的關係。安藤忠雄等大師的作品，特別是其對光影、幾何和自然元素的運用，持續啟發著我。</p>
+                     </div>
+                 </div>
+            </article>
+        </section>
+
+        <!-- Separator -->
+        <hr class="border-gray-200 dark:border-gray-700">
+
+        <!-- Practical Works Section -->
+        <section id="works" class="space-y-16 md:space-y-20">
+            <h2 class="text-3xl font-bold font-sans text-center mb-8 md:mb-12">實作作品</h2>
+
+            <!-- Project: Seating Installation & Bus Stop -->
+            <article class="space-y-12">
+                <h3 class="text-2xl font-semibold font-sans text-sky-700 dark:text-sky-500">藝術生活：空間裝置與設施設計</h3>
+
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
+                    <div class="space-y-4 text-base leading-relaxed text-gray-700 dark:text-gray-300">
+                        <h4 class="text-xl font-semibold font-sans mb-2">「坐」的裝置設計</h4>
+                        <p>作為公車亭設計的前導練習，此裝置以「坐」為核心功能，探索休憩空間的可能性。參考迴紋針的連續線條意象，設計一個能遮風擋雨、結構簡潔的休憩設施。頂部天窗引入光影變化，側邊與後方的綠植牆增添自然氣息與視覺趣味。牆面的縫隙設計，在提供遮蔽的同時，也允許通風與聲音的滲透。</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="img-placeholder">
+                             <span class="text-sm">「坐」的裝置 3D 設計圖</span>
+                        </div>
+                         <p class="text-sm text-center text-gray-500 dark:text-gray-400">裝置設計 3D 示意圖</p>
+                    </div>
+                </div>
+
+                 <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-start mt-12">
+                     <div class="space-y-4 order-2 md:order-1">
+                        <div class="img-placeholder">
+                             <span class="text-sm">候車亭 3D 設計圖 / 實體模型照片</span>
+                        </div>
+                         <p class="text-sm text-center text-gray-500 dark:text-gray-400">候車亭 3D 圖或模型照片示意</p>
+                         <div class="img-placeholder mt-4">
+                            <span class="text-sm">基地分析圖 / 模型製作過程</span>
+                        </div>
+                         <p class="text-sm text-center text-gray-500 dark:text-gray-400">基地分析或模型細節示意</p>
+                    </div>
+                    <div class="space-y-4 order-1 md:order-2 text-base leading-relaxed text-gray-700 dark:text-gray-300">
+                         <h4 class="text-xl font-semibold font-sans mb-2">金門高中候車亭設計</h4>
+                         <p>針對金門高中校門口現有公車站狹窄、學生需在路邊等車的問題，進行候車亭設計。目標是創造一個安全、舒適、美觀且符合學生動線的候車空間。</p>
+                        <h5 class="text-lg font-semibold font-sans mt-4 mb-1">設計概念：</h5>
+                        <ul class="list-disc">
+                            <li><span class="font-medium">基地分析：</span>考量現有圍牆、人行道寬度及學生流動方向。提出開放式圍牆概念，連接校園與候車站。</li>
+                            <li><span class="font-medium">輕量化造型：</span>參考現代建築手法，採用簡潔線條與結構，達成視覺上的輕盈感。</li>
+                            <li><span class="font-medium">機能整合：</span>開放空間配置、遮蔽結構與座椅安排，兼顧通風、採光、遮陽、避雨。</li>
+                            <li><span class="font-medium">模型製作：</span>以冰棒棍、風扣板等材料製作1/20模型，模擬木質與石材等材質，並透過模型思考量體、比例與空間感。後方牆體參考校園舊圍牆意象，賦予新舊對話的連結。</li>
+                        </ul>
+                         <h5 class="text-lg font-semibold font-sans mt-4 mb-1">感想與改進：</h5>
+                         <p>模型製作過程中遇到預期外的挑戰，如屋頂造型的修改、膠水黏合問題等。透過思考與嘗試（如屋頂改為單斜面增加排水與美觀、使用鐵絲加固），學習到問題解決與臨機應變的能力。這次設計加深了我對人與交通空間互動的思考。</p>
+                     </div>
+                 </div>
+            </article>
+
+            <!-- Project: Self-Portrait -->
+            <article class="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
+                 <div class="space-y-4 text-base leading-relaxed text-gray-700 dark:text-gray-300">
+                    <h3 class="text-2xl font-semibold font-sans text-sky-700 dark:text-sky-500">美術：視覺表現</h3>
+                    <h4 class="text-xl font-semibold font-sans mb-2">我的自畫像 (粉彩)</h4>
+                    <p>透過美術課的自畫像練習，訓練對細節的觀察力，特別是色彩的細微變化與光影的呈現。需要在繪畫過程中不斷比對真實照片，並反覆修正調整。這個過程雖然常有不滿意之處，但也培養了耐心與自我檢討的能力，最終目標是更精準地捕捉神韻與質感。</p>
+                 </div>
+                 <div class="space-y-4">
+                    <div class="img-placeholder">
+                        <span class="text-sm">自畫像作品照片</span>
+                    </div>
+                     <p class="text-sm text-center text-gray-500 dark:text-gray-400">自畫像粉彩作品示意圖</p>
+                 </div>
+            </article>
+
+             <!-- Project: Clothing Design -->
+            <article class="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
+                 <div class="space-y-4 order-2 md:order-1">
+                    <div class="img-placeholder">
+                        <span class="text-sm">服裝設計成品照片 / 設計圖</span>
+                    </div>
+                     <p class="text-sm text-center text-gray-500 dark:text-gray-400">服裝設計成品或圖標示意圖</p>
+                 </div>
+                <div class="space-y-4 order-1 md:order-2 text-base leading-relaxed text-gray-700 dark:text-gray-300">
+                    <h3 class="text-2xl font-semibold font-sans text-sky-700 dark:text-sky-500">金門學：文化元素轉譯</h3>
+                    <h4 class="text-xl font-semibold font-sans mb-2">(穎川衍派) 服裝圖標設計</h4>
+                    <p>在金門學課程中，以個人姓氏「陳」的來源「穎川衍派」為主題設計圖標，並以燙印方式製作 T-shirt。經調查得知「陳」姓屬於穎川衍派，故設計以流經「穎川」的河流意象，融入「穎」字造型，象徵歷史文化長河將同宗族人連結在一起。背後的「穎川衍派」四字則直接點明主題。設計初期雖遇靈感枯竭，但反覆修改的過程增加了抗壓性，也帶來完成的期待感。</p>
+                 </div>
+            </article>
+
+            <!-- Project: Woodworking -->
+            <article class="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
+                 <div class="space-y-4 text-base leading-relaxed text-gray-700 dark:text-gray-300">
+                    <h3 class="text-2xl font-semibold font-sans text-sky-700 dark:text-sky-500">生活科技：木工與手作</h3>
+                    <h4 class="text-xl font-semibold font-sans mb-2">榫卯結構鉛筆盒 & 多功能手機座筆筒</h4>
+                    <p>以木工為主題，分別製作鉛筆盒與筆筒。製作過程需要精確切割，以確保榫卯結構的緊密結合，這極需專注力以避免失誤或受傷。在筆筒設計上，特別加入巧思：利用底蓋延伸並挖槽，使其同時具備放置手機的功能。這個細節讓我思考，如何讓設計更貼近生活、更方便使用者。</p>
+                 </div>
+                 <div class="space-y-4">
+                    <div class="img-placeholder">
+                        <span class="text-sm">木工作品照片 (鉛筆盒/筆筒)</span>
+                    </div>
+                     <p class="text-sm text-center text-gray-500 dark:text-gray-400">木工鉛筆盒與筆筒成品示意圖</p>
+                 </div>
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-16 md:mt-24">
+        <div class="container mx-auto px-6 py-6 text-center text-sm text-gray-600 dark:text-gray-400">
+            <p>&copy; 2024 陳民桓. All Rights Reserved.</p>
+            <p>為申請 東海大學建築系 作品集選粹</p>
+        </div>
+    </footer>
+
+</body>
+</html>
