@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳民桓 作品集 - 東海大學建築系</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+        @layer base {
+            html {
+                font-family: 'Noto Sans TC', 'Montserrat', sans-serif;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
+            }
+            /* Apply B&W theme global filter */
+            html.bw-active body {
+                filter: grayscale(100%);
+            }
+        }
+        @layer utilities {
+            .section-padding {
+                @apply px-4 py-12 sm:px-6 lg:px-8 lg:py-16;
+            }
+            .content-max-width {
+                @apply max-w-4xl mx-auto;
+            }
+            .highlight-red {
+                @apply text-red-600 font-semibold;
+            }
+        }
+        .sticky-header {
+            @apply sticky top-0 z-50;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            @apply bg-slate-400; /* Single theme scrollbar */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            @apply bg-slate-500; /* Single theme scrollbar hover */
+        }
+        /* Lightbox specific styles */
+        #lightbox-image.zoomed-in {
+            cursor: grab; 
+        }
+        #lightbox-image.zoomed-in:active {
+            cursor: grabbing;
+        }
+    </style>
+    <script>
+        // B&W Mode Initial Setup (runs early to prevent FOUC)
+        if (localStorage.getItem('bwTheme') === 'true') {
+            document.documentElement.classList.add('bw-active');
+        } else {
+            document.documentElement.classList.remove('bw-active');
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-700 transition-colors duration-300">
+
+    <!-- Header / Navigation -->
+    <header class="sticky-header bg-slate-50/80 backdrop-blur-md shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#hero" class="text-xl font-bold text-sky-700">陳民桓 作品集</a>
+                    <span class="ml-2 text-sm text-slate-500 hidden sm:inline">國立金門高中 | 東海大學建築系</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#about" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-slate-200">自我介紹</a>
+                            <a href="#modeling" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-slate-200">建模作品</a>
+                            <a href="#drawing" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-slate-200">繪圖作品</a>
+                            <a href="#photography" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-slate-200">攝影作品</a>
+                            <a href="#physical" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-slate-200">實體作品</a>
+                        </div>
+                    </div>
+                    <!-- B&W Theme Toggle Button -->
+                    <button id="bw-theme-toggle" type="button" class="ml-4 p-2 rounded-md hover:bg-slate-200 focus:outline-none" title="Toggle Black & White Mode">
+                        <i class="fas fa-palette text-sky-600" id="color-mode-icon"></i>
+                        <i class="fas fa-layer-group text-slate-500 hidden" id="bw-mode-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section (Cover) -->
+        <section id="hero" class="relative h-[calc(100vh-4rem)] min-h-[500px] bg-gray-800 flex items-center justify-center text-center text-white overflow-hidden">
+            <img src="images/page1_cover_image.webp" alt="作品集封面 - 夜間住宅插畫" class="absolute inset-0 w-full h-full object-cover opacity-50 lightbox-trigger cursor-zoom-in">
+            <div class="relative z-10 p-8">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-200">國立金門高中 - 陳民桓</h1>
+                <p class="mt-6 text-5xl sm:text-6xl md:text-8xl font-extrabold leading-tight">作品集</p>
+                <p class="mt-8 text-xl sm:text-2xl md:text-3xl font-semibold text-slate-300">東海大學建築系</p>
+            </div>
+        </section>
+        
+        <!-- Website Navigation Guide -->
+        <section class="section-padding bg-sky-50">
+            <div class="content-max-width text-center">
+                <h2 class="text-2xl font-bold text-sky-700 mb-4">網站導覽指南</h2>
+                <div class="text-slate-600 space-y-2 mx-auto max-w-2xl text-left sm:text-center">
+                    <p><i class="fas fa-info-circle text-sky-600 mr-2"></i>歡迎來到陳民桓的線上作品集！</p>
+                    <p><i class="fas fa-mouse-pointer text-sky-600 mr-2"></i>您可以使用上方的導覽列或下方的「目錄」快速跳轉至不同作品區塊。</p>
+                    <p><i class="fas fa-palette text-sky-600 mr-2"></i>點擊頁首右上角的 <i class="fas fa-palette"></i> / <i class="fas fa-layer-group"></i> 圖示，可以切換網頁的彩色或黑白顯示模式，體驗不同的視覺風格。</p>
+                    <p><i class="fas fa-search-plus text-sky-600 mr-2"></i>作品集中的所有圖片都支援點擊放大預覽。在放大模式下，您可以使用按鈕或滑鼠滾輪進行縮放，拖曳圖片進行移動，方便您仔細觀看作品細節。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 目錄 Section -->
+        <section id="table-of-contents" class="section-padding bg-slate-100">
+            <div class="content-max-width text-center">
+                <img src="images/page2_small_house_photo.jpg" alt="目錄裝飾圖" class="mx-auto w-32 h-auto sm:w-40 rounded-lg shadow-lg mb-6 lightbox-trigger cursor-zoom-in">
+                <h2 class="text-3xl font-bold text-sky-700 mb-6">目錄</h2>
+                <ul class="space-y-3 text-lg">
+                    <li>
+                        <a href="#about" class="text-slate-600 hover:text-sky-600 hover:underline transition-colors duration-200 py-2 px-4 rounded-md inline-block">
+                            <i class="fas fa-user-circle mr-2 text-sky-500"></i>自我介紹
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#modeling" class="text-slate-600 hover:text-sky-600 hover:underline transition-colors duration-200 py-2 px-4 rounded-md inline-block">
+                            <i class="fas fa-cubes mr-2 text-sky-500"></i>建模作品
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#drawing" class="text-slate-600 hover:text-sky-600 hover:underline transition-colors duration-200 py-2 px-4 rounded-md inline-block">
+                            <i class="fas fa-pencil-alt mr-2 text-sky-500"></i>繪圖作品
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#photography" class="text-slate-600 hover:text-sky-600 hover:underline transition-colors duration-200 py-2 px-4 rounded-md inline-block">
+                            <i class="fas fa-camera-retro mr-2 text-sky-500"></i>攝影作品
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#physical" class="text-slate-600 hover:text-sky-600 hover:underline transition-colors duration-200 py-2 px-4 rounded-md inline-block">
+                            <i class="fas fa-tools mr-2 text-sky-500"></i>實體作品
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Self Introduction -->
+        <section id="about" class="section-padding">
+            <div class="content-max-width">
+                <h2 class="text-3xl font-bold text-sky-700 mb-8 text-center">自我介紹</h2>
+                <div class="grid md:grid-cols-3 gap-8 items-start">
+                    <div class="md:col-span-1 space-y-6">
+                        <img src="images/page3_author_portrait.jpg" alt="陳民桓個人照" class="w-full rounded-lg shadow-lg lightbox-trigger cursor-zoom-in">
+                        <img src="images/page3_group_photo.jpg" alt="團體生活照" class="w-full rounded-lg shadow-lg lightbox-trigger cursor-zoom-in">
+                    </div>
+                    <div class="md:col-span-2 text-base leading-relaxed space-y-4">
+                        <p>我是陳民桓,一位土生土長的金門人。父母教育方式開明,從小就尊重並支持我的興趣與志向,讓我能自在探索、勇於嘗試,逐步培養出<span class="highlight-red">獨立思考與自我規劃的能力</span>。</p>
+                        <p>我性格<span class="highlight-red">細心有責任感</span>,對美術與設計充滿熱情,善於<span class="highlight-red">觀察細節、思考空間與人的互動</span>。高中三年,我積極參與建築模型製作與 3D 建模練習,培養<span class="highlight-red">空間感與構造邏輯</span>,也熱愛將生活靈感轉化為創作。</p>
+                        <p>我<span class="highlight-red">樂於學習、勇於挑戰</span>,曾參加辯論社鍛鍊表達與思辨能力,也在童軍社中學會<span class="highlight-red">團隊合作與解決問題</span>。我原本容易緊張,也不太敢在團隊中表達想法,擔心影響他人,後來參加加辯論社後,我學會<span class="highlight-red">冷靜應對壓力、清楚表達觀點</span>,逐漸變得有自信也更受同儕信任。</p>
+                        <p>雖然我有時對細節過於要求,導致行事較慢,但在家人全力支持下,我學會<span class="highlight-red">平衡效率與品質</span>,並不斷成長。未來我希望能留在家鄉,投入<span class="highlight-red">公共空間規劃與文化保存</span>,為地方注入新生命。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modeling Works -->
+        <section id="modeling" class="section-padding bg-slate-100">
+            <div class="content-max-width">
+                <h2 class="text-3xl font-bold text-sky-700 mb-12 text-center">建模作品</h2>
+                
+                <div class="mb-16">
+                    <h3 class="text-2xl font-semibold mb-6 text-center">校園設施改造</h3>
+                    <div class="grid md:grid-cols-3 gap-6 mb-6">
+                        <div class="bg-white p-4 rounded-lg shadow-md">
+                            <img src="images/page4_bus_stop_model.webp" alt="候車亭設計模型" class="w-full h-auto object-cover rounded mb-2 lightbox-trigger cursor-zoom-in">
+                            <p class="font-semibold text-center">候車亭設計</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md">
+                            <img src="images/page4_seating_device_model.webp" alt="坐的裝置模型" class="w-full h-auto object-cover rounded mb-2 lightbox-trigger cursor-zoom-in">
+                            <p class="font-semibold text-center">坐的裝置</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md">
+                            <img src="images/page4_maze_model.webp" alt="迷宮模型" class="w-full h-auto object-cover rounded mb-2 lightbox-trigger cursor-zoom-in">
+                            <p class="font-semibold text-center">迷宮</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-xl font-semibold mb-3">設計心得 | <span class="highlight-red">空間的思考與實踐</span></h4>
+                        <p class="text-sm leading-relaxed">在迷宮、公車亭與坐的裝置三項以依照現實情況改造學校現況為發想的建模設計中,我嘗試從不同尺度與角度<span class="highlight-red">探索空間與人的關係</span>。作品依照和周邊建築相對的現實比例製作,迷宮作品讓我思考動線與引導,公車亭則著重於遮蔽、通風與光影的平衡,而坐的裝置則聚焦於人的尺度與停留的質感。這些設計經驗讓我學會如何<span class="highlight-red">從概念出發,進而整合功能與形式</span>,並透過建模將設計具象化,為我日後的建築學習<span class="highlight-red">打下堅實基礎</span>。</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-center">日式住宅外觀設計</h3>
+                    <div class="grid md:grid-cols-3 gap-6 mb-6">
+                        <img src="images/page5_japanese_house_view1.webp" alt="日式住宅外觀1" class="w-full h-auto object-cover rounded-lg shadow-md lightbox-trigger cursor-zoom-in">
+                        <img src="images/page5_japanese_house_view2.webp" alt="日式住宅外觀2" class="w-full h-auto object-cover rounded-lg shadow-md lightbox-trigger cursor-zoom-in">
+                        <img src="images/page5_japanese_house_view3.webp" alt="日式住宅外觀3" class="w-full h-auto object-cover rounded-lg shadow-md lightbox-trigger cursor-zoom-in">
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-sm leading-relaxed space-y-3">
+                        <p>我以日式建築的<span class="highlight-red">簡約精神</span>為出發點,融合木格柵、自然採光與綠化元素,延伸出兼具<span class="highlight-red">美感與實用的住宅外觀形式</span>。</p>
+                        <p>半開放式的柵欄圍牆界定出庭院空間,模糊了室內與戶外的界線,提升空氣流通與光影變化。建築立面設有大面積開窗與落地窗,引入充足自然光,使室內與庭院景觀產生強烈的視覺連結。</p>
+                        <p>木格柵元素廣泛應用於陽台與停車棚,兼具遮陽與隱私功能,展現材料的溫潤質感。燈光設計則透過LED燈帶與庭園燈,營造出夜間溫馨的氛圍。整體設計強調<span class="highlight-red">建築與自然的對話</span>,展現出靜謐、通透而富層次的生活場景。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Drawing Works -->
+        <section id="drawing" class="section-padding">
+            <div class="content-max-width">
+                <h2 class="text-3xl font-bold text-sky-700 mb-12 text-center">繪圖作品</h2>
+
+                <div class="mb-16">
+                    <h3 class="text-2xl font-semibold mb-6 text-center">日與夜的空間想像</h3>
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <img src="images/page6_house_night_drawing.webp" alt="住宅夜間電繪" class="w-full rounded-lg shadow-md lightbox-trigger cursor-zoom-in">
+                        <img src="images/page6_house_day_drawing.webp" alt="住宅日間電繪" class="w-full rounded-lg shadow-md lightbox-trigger cursor-zoom-in">
+                    </div>
+                    <div class="bg-slate-100 p-6 rounded-lg shadow-inner text-sm leading-relaxed">
+                        <p>透過電繪表現,我描繪了所設計住宅在日與夜兩種情境下的<span class="highlight-red">空間氛圍</span>。日景圖呈現建築與自然光的互動,強調開放性與通透感;夜景則透過燈光層次與陰影變化,營造<span class="highlight-red">溫暖而靜謐的居住氛圍</span>。這兩張圖不僅展現建築在不同時間中的表情,也強調了空間如何回應光線、情境與使用者的生活節奏,反映我對建築氛圍與居住感受的<span class="highlight-red">細膩關注</span>。</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-center">手繪觀察, 構築感知</h3>
+                    <div class="mb-6">
+                        <img src="images/page7_color_portrait_drawing.jpg" alt="彩色人像手繪" class="w-full md:w-2/3 mx-auto rounded-lg shadow-md lightbox-trigger cursor-zoom-in">
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4 mb-6">
+                        <img src="images/page7_sketch1_bust.webp" alt="素描-古典胸像" class="w-full h-auto object-cover rounded-lg shadow-sm lightbox-trigger cursor-zoom-in">
+                        <img src="images/page7_sketch2_portraits.webp" alt="素描-雙人頭像" class="w-full h-auto object-cover rounded-lg shadow-sm lightbox-trigger cursor-zoom-in">
+                        <img src="images/page7_sketch3_statue.webp" alt="素描-雕像" class="w-full h-auto object-cover rounded-lg shadow-sm lightbox-trigger cursor-zoom-in">
+                        <img src="images/page7_sketch4_building_ink.jfif" alt="速寫-日式建築" class="w-full h-auto object-cover rounded-lg shadow-sm lightbox-trigger cursor-zoom-in">
+                        <img src="images/page7_sketch5_nude.jfif" alt="素描-人體" class="w-full h-auto object-cover rounded-lg shadow-sm lightbox-trigger cursor-zoom-in">
+                        <img src="images/page7_sketch6_modern_building.jfif" alt="速寫-現代建築" class="w-full h-auto object-cover rounded-lg shadow-sm lightbox-trigger cursor-zoom-in">
+                    </div>
+                    <div class="bg-slate-100 p-6 rounded-lg shadow-inner text-sm leading-relaxed">
+                        <p>透過素描、自畫像與建築速寫,我訓練自己對<span class="highlight-red">比例、光影與結構的敏銳度</span>。手繪讓我更直接地觀察世界,也強化我在建築設計中對<span class="highlight-red">空間與細節的掌握</span>。這些作品是我理解形體、構圖與人與建築關係的起點。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photography Works -->
+        <section id="photography" class="section-padding bg-slate-100">
+            <div class="content-max-width">
+                <h2 class="text-3xl font-bold text-sky-700 mb-12 text-center">攝影作品</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">光影中的設計筆記</h3>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <img src="images/page8_photo_torii_gate.jfif" alt="日本神社鳥居" class="rounded-lg shadow-md lightbox-trigger cursor-zoom-in">
+                            <img src="images/page8_photo_osaka_castle.png" alt="大阪城與作者" class="rounded-lg shadow-md lightbox-trigger cursor-zoom-in">
+                            <img src="images/page8_photo_outdoor_mall.jfif" alt="戶外商場水池" class="rounded-lg shadow-md lightbox-trigger cursor-zoom-in">
+                            <img src="images/page8_photo_traditional_street.jfif" alt="日式傳統街道" class="rounded-lg shadow-md lightbox-trigger cursor-zoom-in">
+                        </div>
+                        <p class="text-sm leading-relaxed">我熱愛光影從我的眼前渲染,所以我也熱衷於將這些瞬間定格。在記錄有趣的事實的同時,我也會在手機的記事本APP跟紙筆記錄這些<span class="highlight-red">有機的構成背後的巧思</span>或我因此想到的創意。透過攝影,我可以很輕鬆的把世界的有趣一面,轉化為我設計<span class="highlight-red">有用又巧妙的設計的素材</span>。</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">光影為筆, 構築為詩</h3>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                             <img src="images/page9_photo_skyscrapers.webp" alt="高樓與飛機雲" class="rounded-lg shadow-md lightbox-trigger cursor-zoom-in">
+                             <img src="images/page9_photo_author_in_class.png" alt="作者在教室" class="rounded-lg shadow-md lightbox-trigger cursor-zoom-in">
+                             <img src="images/page9_photo_market_scene.jfif" alt="傳統市場" class="rounded-lg shadow-md lightbox-trigger cursor-zoom-in">
+                             <img src="images/page9_photo_city_street_tall_building.webp" alt="城市街景與高樓" class="rounded-lg shadow-md lightbox-trigger cursor-zoom-in">
+                        </div>
+                        <p class="text-sm leading-relaxed">我渴望進入貴建築學系,因我對<span class="highlight-red">光影的捕捉解讀與有機構成的分析能力</span>,能為學習建築奠定基礎。我希望能系統學習結構、材料與空間佈局,從而主動「設計」光影而非僅僅記錄,創造出兼具<span class="highlight-red">實用巧妙與詩意美感的建築</span>。我深信建築是技術與藝術的融合,而光影便是我理解這門綜合藝術的<span class="highlight-red">獨特視角</span>。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Physical Models -->
+        <section id="physical" class="section-padding">
+            <div class="content-max-width">
+                <h2 class="text-3xl font-bold text-sky-700 mb-8 text-center">實體作品</h2>
+                <h3 class="text-xl font-semibold mb-10 text-center text-slate-600">設計與材質探索</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <img src="images/page10_architectural_model.jfif" alt="1/20 建築模型" class="w-full rounded-lg shadow-lg lightbox-trigger cursor-zoom-in">
+                    <img src="images/page10_pencil_box_holder.jfif" alt="鉛筆盒與筆筒" class="w-full rounded-lg shadow-lg lightbox-trigger cursor-zoom-in">
+                    <img src="images/page10_paper_spheres.jfif" alt="紙製球體" class="w-full rounded-lg shadow-lg lightbox-trigger cursor-zoom-in">
+                </div>
+
+                <div class="space-y-6 text-sm leading-relaxed bg-slate-100 p-6 rounded-lg shadow-inner">
+                    <p><strong class="text-sky-600">建築模型：</strong>這些作品展示了我對<span class="highlight-red">材質、形式與功能的深刻理解</span>。在1/20比例的建築模型中,我以冰棒棍和風扣板模擬木質材質,創造出自然、溫暖的氛圍。圍牆設計靈感來自校園老舊圍牆,並以<span class="highlight-red">現代語言重新詮釋</span>,賦予空間新生命。</p>
+                    <p><strong class="text-sky-600">生活科技作品：</strong>在生活科技課程中,我製作了鉛筆盒與筆筒,強調<span class="highlight-red">精確的切割與榫卯結構</span>,並在筆筒中加入巧思,將底蓋延伸並挖槽,讓其同時具備<span class="highlight-red">放筆與放手機的功能</span>,增強設計的實用性與生活化。</p>
+                    <p><strong class="text-sky-600">材質探索：</strong>此外,我也探索了合用紙片製作的球體,進一步研究材料的變化與結構表現。這些作品展現了我對<span class="highlight-red">創意設計、功能性與美學平衡的探索</span>,並反映了我如何將設計理念具體實現。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer / End Section -->
+        <footer class="relative h-[60vh] min-h-[400px] bg-gray-700 flex flex-col items-center justify-center text-center text-white overflow-hidden">
+            <img src="images/page11_end_page_ivy_building.jpg" alt="結束頁 - 藤蔓建築" class="absolute inset-0 w-full h-full object-cover opacity-40 lightbox-trigger cursor-zoom-in">
+            <div class="relative z-10 p-8">
+                <p class="text-6xl md:text-8xl font-bold font-['Montserrat'] tracking-wider">The End</p>
+                <p class="mt-4 text-lg text-slate-300">感謝您的閱覽</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Image Lightbox Structure -->
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-[100] hidden cursor-zoom-out">
+        <div id="lightbox-content" class="relative bg-white p-2 rounded-lg shadow-xl max-w-full max-h-full overflow-auto cursor-default">
+            <img id="lightbox-image" src="" alt="Enlarged image" class="max-w-full max-h-[85vh] object-contain block mx-auto transition-transform duration-300 ease-in-out">
+            <button id="lightbox-close" class="absolute top-2 right-2 text-white bg-black bg-opacity-50 hover:bg-opacity-75 rounded-full w-8 h-8 flex items-center justify-center text-xl z-[101]">×</button>
+            <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-2 z-[101]">
+                <button id="lightbox-zoom-in" class="text-white bg-black bg-opacity-50 hover:bg-opacity-75 rounded-md px-3 py-1 text-sm"><i class="fas fa-search-plus mr-1"></i>放大</button>
+                <button id="lightbox-zoom-out" class="text-white bg-black bg-opacity-50 hover:bg-opacity-75 rounded-md px-3 py-1 text-sm"><i class="fas fa-search-minus mr-1"></i>縮小</button>
+                <button id="lightbox-zoom-reset" class="text-white bg-black bg-opacity-50 hover:bg-opacity-75 rounded-md px-3 py-1 text-sm"><i class="fas fa-sync-alt mr-1"></i>重置</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // DOM Elements
+        const htmlElement = document.documentElement;
+        const bwThemeToggleBtn = document.getElementById('bw-theme-toggle');
+        const colorModeIcon = document.getElementById('color-mode-icon');
+        const bwModeIcon = document.getElementById('bw-mode-icon');
+
+        // --- Black & White Theme Logic ---
+        function updateBwIcons(isBw) {
+            if (isBw) {
+                colorModeIcon.classList.add('hidden');
+                bwModeIcon.classList.remove('hidden');
+            } else {
+                colorModeIcon.classList.remove('hidden');
+                bwModeIcon.classList.add('hidden');
+            }
+        }
+
+        function setBwTheme(isBw) {
+            if (isBw) {
+                htmlElement.classList.add('bw-active');
+                localStorage.setItem('bwTheme', 'true');
+            } else {
+                htmlElement.classList.remove('bw-active');
+                localStorage.setItem('bwTheme', 'false');
+            }
+            updateBwIcons(isBw);
+        }
+
+        // Initialize B&W theme button state
+        updateBwIcons(htmlElement.classList.contains('bw-active'));
+        
+        bwThemeToggleBtn.addEventListener('click', () => {
+            const isCurrentlyBw = htmlElement.classList.contains('bw-active');
+            setBwTheme(!isCurrentlyBw);
+        });
+
+        // --- Image Lightbox Logic ---
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxZoomIn = document.getElementById('lightbox-zoom-in');
+        const lightboxZoomOut = document.getElementById('lightbox-zoom-out');
+        const lightboxZoomReset = document.getElementById('lightbox-zoom-reset');
+        const lightboxContent = document.getElementById('lightbox-content'); // Get the scrollable content area
+
+        const images = document.querySelectorAll('.lightbox-trigger');
+        let currentZoom = 1;
+        const zoomStep = 0.2;
+        let isDragging = false;
+        let startX, startY, initialTranslateX = 0, initialTranslateY = 0; // Use these to store the translate values at drag start
+
+
+        images.forEach(image => {
+            image.addEventListener('click', (e) => {
+                // Prevent click if the image itself is inside another clickable element that shouldn't trigger lightbox
+                // For example, if an image is inside an <a> tag that's not for the lightbox.
+                // This might not be necessary if your structure is simple.
+                // e.stopPropagation(); 
+
+                lightboxImage.src = image.src;
+                lightbox.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent background scroll
+                resetZoomAndPosition();
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore background scroll
+            resetZoomAndPosition(); // Also reset zoom when closing
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        
+        lightbox.addEventListener('click', (e) => {
+            // Close if clicked on the background (the lightbox div itself), not the content/image
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+                closeLightbox();
+            }
+        });
+        
+        function applyZoomAndPosition() {
+            lightboxImage.style.transform = `translate(${initialTranslateX}px, ${initialTranslateY}px) scale(${currentZoom})`;
+             if (currentZoom > 1) {
+                lightboxImage.classList.add('zoomed-in');
+            } else {
+                lightboxImage.classList.remove('zoomed-in');
+            }
+        }
+        
+        function resetZoomAndPosition() {
+            currentZoom = 1;
+            initialTranslateX = 0; // Renamed from translateX
+            initialTranslateY = 0; // Renamed from translateY
+            applyZoomAndPosition();
+            lightboxImage.style.transition = 'transform 0.3s ease-in-out';
+            lightboxContent.scrollTop = 0;
+            lightboxContent.scrollLeft = 0;
+        }
+
+        lightboxZoomIn.addEventListener('click', () => {
+            currentZoom = Math.min(currentZoom + zoomStep, 5); // Max zoom 5x
+            applyZoomAndPosition();
+        });
+
+        lightboxZoomOut.addEventListener('click', () => {
+            currentZoom = Math.max(currentZoom - zoomStep, 0.2); // Min zoom 0.2x
+            if (currentZoom <= 0.2 && currentZoom !== 1) currentZoom = 0.2; // Ensure it doesn't go too small weirdly
+            applyZoomAndPosition();
+        });
+        
+        lightboxZoomReset.addEventListener('click', resetZoomAndPosition);
+
+        lightboxImage.addEventListener('mousedown', (e) => {
+            if (currentZoom > 1) {
+                e.preventDefault(); 
+                isDragging = true;
+                // Store the starting point of the drag relative to the image's current translation
+                startX = e.pageX - initialTranslateX; 
+                startY = e.pageY - initialTranslateY;
+                lightboxImage.style.transition = 'none'; 
+                lightboxImage.style.cursor = 'grabbing';
+            }
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging && currentZoom > 1) {
+                e.preventDefault();
+                // Update the initial translation based on mouse movement
+                initialTranslateX = e.pageX - startX;
+                initialTranslateY = e.pageY - startY;
+                applyZoomAndPosition();
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            if (isDragging) {
+                isDragging = false;
+                lightboxImage.style.cursor = 'grab';
+                lightboxImage.style.transition = 'transform 0.3s ease-in-out';
+            }
+        });
+        
+        lightboxImage.addEventListener('wheel', (e) => {
+            if (!lightbox.classList.contains('hidden')) {
+                e.preventDefault(); 
+                const oldZoom = currentZoom;
+                if (e.deltaY < 0) { 
+                    currentZoom = Math.min(currentZoom + zoomStep, 5); 
+                } else { 
+                    currentZoom = Math.max(currentZoom - zoomStep, 0.2);
+                }
+                if (currentZoom <= 0.2 && currentZoom !== 1) currentZoom = 0.2;
+
+                // Zoom towards mouse pointer
+                // Get bounding box of the image
+                const rect = lightboxImage.getBoundingClientRect();
+                // Calculate mouse position relative to image (0,0 is top-left of image)
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+
+                // Calculate new translation to keep mouse position fixed relative to image content
+                // (translateX - mouseX) / oldZoom * newZoom + mouseX = newTranslateX
+                initialTranslateX = (initialTranslateX - mouseX) / oldZoom * currentZoom + mouseX;
+                initialTranslateY = (initialTranslateY - mouseY) / oldZoom * currentZoom + mouseY;
+                
+                applyZoomAndPosition();
+            }
+        });
+    </script>
+</body>
+</html>

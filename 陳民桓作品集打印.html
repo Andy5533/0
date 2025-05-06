@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳民桓 作品集 - TruePrint Edition v17 (Final Image/Comment Fix)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Noto+Serif+TC:wght@400;500;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+        @layer base {
+            html {
+                font-family: 'Noto Serif TC', 'Noto Sans TC', serif;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            body {
+                @apply bg-gray-300 text-gray-800 leading-relaxed;
+                font-size: 10.5pt;
+            }
+            h1, h2, h3, h4, h5, h6, .print-main-title, .print-section-title, .print-subsection-title {
+                font-family: 'Raleway', 'Noto Sans TC', sans-serif;
+            }
+            .print-main-title { @apply text-3xl font-bold mb-5 text-sky-800 tracking-tight; }
+            .print-section-title { @apply text-xl font-semibold mt-4 mb-2 text-sky-700 border-b border-sky-300 pb-1; }
+            .print-subsection-title { @apply text-lg font-medium mt-3 mb-1 text-slate-700; }
+
+            .print-body-text, .print-desc-xl {
+                font-family: 'Noto Serif TC', 'Noto Sans TC', serif;
+            }
+            .print-body-text {
+                @apply text-base text-slate-700;
+            }
+            .print-desc-xl {
+                @apply text-lg text-slate-800 leading-relaxed;
+            }
+            .print-image-caption {
+                font-family: 'Noto Sans TC', sans-serif;
+                @apply text-[9pt] text-slate-500 text-center mt-1 italic;
+            }
+        }
+        @layer components {
+            .trueprint-page {
+                @apply bg-white shadow-xl mx-auto my-6 flex flex-col;
+                width: 21cm;
+                height: 29.7cm;
+                padding: 1.8cm;
+                page-break-after: always;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+            .trueprint-page:last-child {
+                page-break-after: auto;
+            }
+             .description-box-final {
+                @apply bg-slate-50 p-5 rounded-md mt-4;
+            }
+        }
+        @layer utilities {
+            .highlight-text {
+                @apply text-red-600 font-semibold;
+            }
+        }
+        @media print {
+            body {
+                background-color: #fff !important; margin: 0; padding: 0; font-size: 10.5pt;
+            }
+            html, body {
+                 font-family: 'Noto Serif TC', 'Noto Sans TC', serif !important;
+            }
+            h1, h2, h3, h4, h5, h6, .print-main-title, .print-section-title, .print-subsection-title {
+                 font-family: 'Raleway', 'Noto Sans TC', sans-serif !important;
+            }
+            .print-image-caption {
+                font-family: 'Noto Sans TC', sans-serif !important;
+            }
+            .trueprint-page {
+                margin: 0 !important; box-shadow: none !important;
+                width: 100% !important;
+                height: 100% !important;
+                padding: 1.5cm !important;
+                page-break-after: always !important;
+                overflow: hidden !important;
+            }
+            .trueprint-page:last-child { page-break-after: auto !important; }
+            .no-print-final-v17 { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-print-final-v17 text-center p-4 bg-sky-100 text-sky-800 text-sm">
+        <p><strong>TruePrint Edition v17 (Final Image/Comment Fix):</strong> 此版本專為精確A4列印設計。進一步調整圖片大小並確保無內部註解。</p>
+        <p>列印時，請選擇「另存為 PDF」，紙張大小A4，邊界「預設」或「無」，勾選「背景圖形」。</p>
+    </div>
+
+    <!-- PAGE 1: Cover -->
+    <div class="trueprint-page items-center justify-center text-center p-0 relative" style="background-image: url('images/page1_cover_image.webp'); background-size: cover; background-position: center center;">
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <div class="relative z-10 flex flex-col justify-center items-center h-full text-white">
+            <h1 class="text-7xl font-bold tracking-tight mb-12 filter drop-shadow-lg" style="font-family: 'Raleway', sans-serif;">作品集</h1>
+            <p class="text-3xl font-light mb-4 filter drop-shadow-md" style="font-family: 'Raleway', 'Noto Sans TC', sans-serif;">陳民桓｜國立金門高中</p>
+            <p class="text-2xl text-sky-300 filter drop-shadow-sm" style="font-family: 'Raleway', 'Noto Sans TC', sans-serif;">東海大學建築系</p>
+        </div>
+    </div>
+
+    <!-- PAGE 2: 目錄 -->
+    <div class="trueprint-page">
+        <h1 class="print-main-title text-center border-b-2 border-sky-500 pb-3 mb-10 !mt-2 !text-4xl">目錄</h1>
+        <div class="grid grid-cols-2 gap-x-10 gap-y-8 flex-grow items-center">
+            <div>
+                <img src="images/page3_author_portrait.jpg" alt="自我介紹" class="w-full h-40 object-cover rounded-lg shadow-md mb-2">
+                <p class="text-center text-lg" style="font-family: 'Raleway', 'Noto Sans TC', sans-serif;">01 自我介紹</p>
+            </div>
+            <div>
+                <img src="images/page5_japanese_house_view1.webp" alt="建模作品" class="w-full h-40 object-cover rounded-lg shadow-md mb-2">
+                <p class="text-center text-lg" style="font-family: 'Raleway', 'Noto Sans TC', sans-serif;">02 建模作品</p>
+            </div>
+            <div>
+                <img src="images/page6_house_night_drawing.webp" alt="繪圖作品" class="w-full h-40 object-cover rounded-lg shadow-md mb-2">
+                <p class="text-center text-lg" style="font-family: 'Raleway', 'Noto Sans TC', sans-serif;">03 繪圖作品</p>
+            </div>
+            <div>
+                <img src="images/page8_photo_torii_gate.jfif" alt="攝影作品" class="w-full h-40 object-cover rounded-lg shadow-md mb-2">
+                <p class="text-center text-lg" style="font-family: 'Raleway', 'Noto Sans TC', sans-serif;">04 攝影作品</p>
+            </div>
+            <div class="col-span-2 flex justify-center mt-4">
+                <div class="w-1/2 text-center">
+                    <img src="images/page10_architectural_model.jfif" alt="實體作品" class="w-full h-40 object-cover rounded-lg shadow-md mb-2">
+                    <p class="text-center text-lg" style="font-family: 'Raleway', 'Noto Sans TC', sans-serif;">05 實體作品</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 3: 自我介紹 -->
+    <div class="trueprint-page flex flex-col">
+        <h1 class="print-main-title !text-center border-b-2 border-sky-500 pb-3 mb-6 !mt-2 !text-4xl">自我介紹</h1>
+        <div class="flex gap-8 mt-4 flex-grow items-stretch">
+            <div class="w-2/5 flex flex-col">
+                <img src="images/page3_author_portrait.jpg" alt="陳民桓" class="w-full rounded-lg shadow-lg object-cover aspect-[3/4] flex-shrink-0 mb-2">
+                <img src="images/page3_group_photo.jpg" alt="團體生活" class="w-full rounded-lg shadow-lg object-cover aspect-video flex-shrink-0">
+            </div>
+            <div class="w-3/5 space-y-4 flex flex-col justify-center">
+                <p class="print-desc-xl">我是陳民桓，一位土生土長的金門人。父母教育方式開明，從小就尊重並支持我的興趣與志向，讓我能自在探索、勇於嘗試，逐步培養出<span class="highlight-text">獨立思考與自我規劃的能力</span>。</p>
+                <p class="print-desc-xl">我性格<span class="highlight-text">細心有責任感</span>，對美術與設計充滿熱情，善於<span class="highlight-text">觀察細節、思考空間與人的互動</span>。高中三年，我積極參與建築模型製作與 3D 建模練習，培養<span class="highlight-text">空間感與構造邏輯</span>，也熱愛將生活靈感轉化為創作。</p>
+                <p class="print-desc-xl">我<span class="highlight-text">樂於學習、勇於挑戰</span>，曾參加辯論社鍛鍊表達與思辨能力，也在童軍社中學會<span class="highlight-text">團隊合作與解決問題</span>。後來參加加辯論社後，我學會<span class="highlight-text">冷靜應對壓力、清楚表達觀點</span>，逐漸變得有自信也更受同儕信任。</p>
+                <p class="print-desc-xl">雖然我有時對細節過於要求，導致行事較慢，但在家人全力支持下，我學會<span class="highlight-text">平衡效率與品質</span>，並不斷成長。未來我希望能留在家鄉，投入<span class="highlight-text">公共空間規劃與文化保存</span>，為地方注入新生命。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 4: 建模作品 - 校園設施改造 -->
+    <div class="trueprint-page flex flex-col">
+        <h1 class="print-main-title !text-center border-b-2 border-sky-500 pb-3 mb-6 !mt-2 !text-4xl">建模作品</h1>
+        <h2 class="print-section-title !text-2xl">校園設施改造</h2>
+        <div class="grid grid-cols-2 gap-6 mt-3">
+            <figure>
+                <img src="images/page4_bus_stop_model.webp" alt="候車亭設計" class="w-full rounded-md shadow-lg object-contain aspect-[16/9]">
+                <figcaption class="print-image-caption">候車亭設計</figcaption>
+            </figure>
+            <figure>
+                <img src="images/page4_seating_device_model.webp" alt="坐的裝置" class="w-full rounded-md shadow-lg object-contain aspect-[16/9]">
+                <figcaption class="print-image-caption">坐的裝置</figcaption>
+            </figure>
+         </div>
+         <figure class="mt-4">
+            <img src="images/page4_maze_model.webp" alt="迷宮" class="w-3/4 mx-auto rounded-md shadow-lg object-contain aspect-[16/9]">
+            <figcaption class="print-image-caption">迷宮</figcaption>
+        </figure>
+        <div class="description-box-final mt-auto">
+            <h3 class="print-subsection-title !mt-0">設計心得｜<span class="highlight-text">空間的思考與實踐</span></h3>
+            <p class="print-desc-xl">在迷宮、公車亭與坐的裝置三項改造學校現況的設計中，我嘗試從不同尺度與角度<span class="highlight-text">探索空間與人的關係</span>。作品依照現實比例製作。此經驗讓我學會<span class="highlight-text">從概念出發整合功能與形式</span>，並透過建模將設計具象化，為日後建築學習<span class="highlight-text">打下堅實基礎</span>。</p>
+        </div>
+    </div>
+
+    <!-- PAGE 5: 建模作品 (續) - 日式住宅 -->
+    <div class="trueprint-page flex flex-col">
+         <h1 class="print-main-title !text-center border-b-2 border-sky-500 pb-3 mb-6 !mt-2 !text-4xl">建模作品 (續)</h1>
+        <h2 class="print-section-title !text-2xl">日式住宅外觀設計</h2>
+        <div class="grid grid-cols-2 gap-5 mt-3">
+            <img src="images/page5_japanese_house_view1.webp" alt="日式住宅外觀1" class="w-full rounded shadow-md object-cover aspect-[16/10]">
+            <img src="images/page5_japanese_house_view2.webp" alt="日式住宅外觀2" class="w-full rounded shadow-md object-cover aspect-[16/10]">
+            <img src="images/page5_japanese_house_view3.webp" alt="日式住宅外觀3" class="col-span-2 w-full rounded shadow-md object-cover aspect-[16/8] mt-3">
+        </div>
+        <div class="description-box-final mt-auto">
+             <p class="print-desc-xl">以日式建築的<span class="highlight-text">簡約精神</span>出發，融合木格柵、自然採光、綠化，延伸出<span class="highlight-text">美感與實用的外觀</span>。半開放圍牆界定庭院，模糊內外界線。立面大窗引入光線，強化視覺連結。木格柵兼具遮陽隱私。燈光營造夜間氛圍。整體強調<span class="highlight-text">建築與自然的對話</span>，展現靜謐、通透而富層次的生活場景。</p>
+        </div>
+    </div>
+
+    <!-- PAGE 6: 繪圖作品 - 日與夜 (Image height reduced) -->
+    <div class="trueprint-page flex flex-col">
+        <h1 class="print-main-title !text-center border-b-2 border-sky-500 pb-3 mb-6 !mt-2 !text-4xl">繪圖作品</h1>
+        <h2 class="print-section-title !text-2xl">日與夜的空間想像 (電繪)</h2>
+        <div class="flex flex-col items-center space-y-3 mt-3"> 
+            <img src="images/page6_house_night_drawing.webp" alt="住宅夜間電繪" class="w-full max-w-md rounded shadow-lg object-contain aspect-[16/9]"> 
+            <img src="images/page6_house_day_drawing.webp" alt="住宅日間電繪" class="w-full max-w-md rounded shadow-lg object-contain aspect-[16/9]"> 
+        </div>
+        <div class="description-box-final mt-auto">
+            <p class="print-desc-xl">透過電繪描繪住宅在日夜情境下的<span class="highlight-text">空間氛圍</span>。日景呈現建築與自然光的互動，強調開放性；夜景透過燈光與陰影變化，營造<span class="highlight-text">溫暖靜謐的居住氛圍</span>。此二圖展現建築不同時間的表情，也強調空間如何回應光線、情境與使用者節奏，反映我對建築氛圍與居住感受的<span class="highlight-text">細膩關注</span>。</p>
+        </div>
+    </div>
+
+    <!-- PAGE 7: 繪圖作品 (續) - 手繪 -->
+    <div class="trueprint-page flex flex-col">
+         <h1 class="print-main-title !text-center border-b-2 border-sky-500 pb-3 mb-6 !mt-2 !text-4xl">繪圖作品 (續)</h1>
+        <h2 class="print-section-title !text-2xl">手繪觀察，構築感知</h2>
+        <div class="flex justify-center mt-2 mb-4">
+             <img src="images/page7_color_portrait_drawing.jpg" alt="彩色人像手繪" class="w-2/5 rounded-lg shadow-xl object-contain aspect-[4/3]">
+        </div>
+        <div class="grid grid-cols-3 gap-3 mb-4"> 
+            <img src="images/page7_sketch1_bust.webp" alt="素描-古典胸像" class="w-full rounded-md shadow-lg object-contain aspect-square">
+            <img src="images/page7_sketch2_portraits.webp" alt="素描-雙人頭像" class="w-full rounded-md shadow-lg object-contain aspect-square">
+            <img src="images/page7_sketch3_statue.webp" alt="素描-雕像" class="w-full rounded-md shadow-lg object-contain aspect-square">
+            <img src="images/page7_sketch4_building_ink.jfif" alt="速寫-日式建築" class="w-full rounded-md shadow-lg object-contain aspect-square">
+            <img src="images/page7_sketch5_nude.jfif" alt="素描-人體" class="w-full rounded-md shadow-lg object-contain aspect-square">
+            <img src="images/page7_sketch6_modern_building.jfif" alt="速寫-現代建築" class="w-full rounded-md shadow-lg object-contain aspect-square">
+        </div>
+         <div class="description-box-final mt-auto">
+            <p class="print-desc-xl">透過素描、自畫像與建築速寫，我訓練自己對<span class="highlight-text">比例、光影與結構的敏銳度</span>。手繪讓我更直接地觀察世界，也強化我在建築設計中對<span class="highlight-text">空間与細節的掌握</span>。這些作品是我理解形體、構圖与人与建築關係的起點。</p>
+        </div>
+    </div>
+
+    <!-- PAGE 8: 攝影作品 -->
+    <div class="trueprint-page flex flex-col">
+        <h1 class="print-main-title !text-center border-b-2 border-sky-500 pb-3 mb-6 !mt-2 !text-4xl">攝影作品</h1>
+        <div class="flex-grow grid grid-cols-2 gap-8 mt-2">
+            <div class="flex flex-col">
+                <h2 class="print-section-title !mt-0 !text-2xl">光影中的設計筆記</h2>
+                <div class="grid grid-cols-2 gap-3 mb-3">
+                    <img src="images/page8_photo_torii_gate.jfif" alt="攝影1" class="w-full rounded shadow-md object-cover aspect-square">
+                    <img src="images/page8_photo_osaka_castle.png" alt="攝影2" class="w-full rounded shadow-md object-cover aspect-square">
+                    <img src="images/page8_photo_outdoor_mall.jfif" alt="攝影3" class="w-full rounded shadow-md object-cover aspect-square">
+                    <img src="images/page8_photo_traditional_street.jfif" alt="攝影4" class="w-full rounded shadow-md object-cover aspect-square">
+                </div>
+                <div class="description-box-final flex-grow flex items-center !mt-3">
+                    <p class="print-desc-xl text-justify">我熱愛光影從我的眼前渲染，熱衷於將這些瞬間定格。記錄同時，亦在筆記本記錄這些<span class="highlight-text">有機構成背後的巧思</span>或創意。透過攝影，能輕鬆將世界有趣一面，轉化為我設計<span class="highlight-text">有用又巧妙的設計素材</span>。</p>
+                </div>
+            </div>
+            <div class="flex flex-col">
+                <h2 class="print-section-title !mt-0 !text-2xl">光影為筆，構築為詩</h2>
+                 <div class="grid grid-cols-2 gap-3 mb-3">
+                    <img src="images/page9_photo_skyscrapers.webp" alt="攝影5" class="w-full rounded shadow-md object-cover aspect-square">
+                    <img src="images/page9_photo_author_in_class.png" alt="攝影6" class="w-full rounded shadow-md object-cover aspect-square">
+                    <img src="images/page9_photo_market_scene.jfif" alt="攝影7" class="w-full rounded shadow-md object-cover aspect-square">
+                    <img src="images/page9_photo_city_street_tall_building.webp" alt="攝影8" class="w-full rounded shadow-md object-cover aspect-square">
+                </div>
+                <div class="description-box-final flex-grow flex items-center !mt-3">
+                    <p class="print-desc-xl text-justify">渴望進入貴建築學系，因我對<span class="highlight-text">光影捕捉解讀與有機構成的分析能力</span>，能為學習建築奠基。希望能系統學習結構、材料與空間佈局，從而主動「設計」光影，創造兼具<span class="highlight-text">實用巧妙與詩意美感的建築</span>。深信建築是技術與藝術的融合，光影便是我理解這門藝術的<span class="highlight-text">獨特視角</span>。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 9: 實體作品 (Image heights adjusted) -->
+    <div class="trueprint-page flex flex-col">
+        <h1 class="print-main-title !text-center border-b-2 border-sky-500 pb-3 mb-6 !mt-2 !text-4xl">實體作品</h1>
+        <h2 class="print-section-title !text-2xl">設計與材質探索</h2>
+        <div class="grid grid-cols-3 gap-4 mt-3 mb-4 items-start"> 
+             <figure>
+                <img src="images/page10_architectural_model.jfif" alt="建築模型" class="w-full rounded-lg shadow-xl object-contain aspect-[16/10]">
+                <figcaption class="print-image-caption">1/20 建築模型</figcaption>
+            </figure>
+             <figure>
+                <img src="images/page10_pencil_box_holder.jfif" alt="鉛筆盒與筆筒" class="w-full rounded-lg shadow-xl object-contain aspect-[4/3]">
+                <figcaption class="print-image-caption">鉛筆盒與筆筒</figcaption>
+            </figure>
+            <figure>
+                <img src="images/page10_paper_spheres.jfif" alt="紙製球體" class="w-full rounded-lg shadow-xl object-contain aspect-[4/3]">
+                <figcaption class="print-image-caption">紙製球體</figcaption>
+            </figure>
+        </div>
+        <div class="description-box-final space-y-3 mt-auto">
+             <p class="print-desc-xl"><strong>建築模型：</strong>展示對<span class="highlight-text">材質、形式與功能</span>的深刻理解。1/20模型中，以冰棒棍和風扣板模擬木質，創溫暖氛圍。圍牆設計來自校園舊圍牆，以<span class="highlight-text">現代語言重新詮釋</span>，賦予空間新生命。</p>
+             <p class="print-desc-xl"><strong>生活科技作品：</strong>製作鉛筆盒與筆筒，強調<span class="highlight-text">精確切割與榫卯結構</span>。筆筒加入巧思，底蓋延伸挖槽，具備<span class="highlight-text">放筆與手機功能</span>，增強實用性。</p>
+             <p class="print-desc-xl"><strong>材質探索：</strong>探索紙片球體，研究材料變化與結構。展現對<span class="highlight-text">創意、功能性與美學平衡</span>的探索，反映設計理念的具體實現。</p>
+        </div>
+    </div>
+
+    <!-- PAGE 10: END PAGE -->
+    <div class="trueprint-page items-center justify-center text-center p-0 relative" style="background-image: url('images/page11_end_page_ivy_building.jpg'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <div class="relative z-10 text-white">
+            <p class="text-8xl font-bold tracking-wider filter drop-shadow-lg" style="font-family: 'Raleway', sans-serif;">The End</p>
+            <p class="mt-8 text-3xl font-light filter drop-shadow-md" style="font-family: 'Raleway', 'Noto Sans TC', sans-serif;">感謝您的閱覽</p>
+        </div>
+    </div>
+
+</body>
+</html>
