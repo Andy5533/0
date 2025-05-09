@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="zh-Hant" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>陳民桓之希望這不會成為我的幹話日本行</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-papz..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Custom font families */
+    .font-sans { font-family: 'Noto Sans TC', sans-serif; }
+    .font-serif { font-family: 'Noto Serif TC', serif; }
+    /* Dark mode override */
+    .dark-mode-toggle:focus { outline: none; }
+  </style>
+</head>
+<body class="font-sans bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+  <!-- Header with site title and theme toggle -->
+  <header class="sticky top-0 bg-white dark:bg-gray-800 shadow-md z-10">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <!-- Site Title -->
+      <h1 class="text-2xl font-bold font-serif">陳民桓之希望這不會成為我的幹話日本行</h1>
+      <!-- Theme Toggle -->
+      <button id="theme-toggle" class="dark-mode-toggle text-xl" aria-label="切換主題">
+        <i id="theme-icon" class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </header>  <main class="container mx-auto p-4 space-y-8">
+    <!-- 詳細行程 Section -->
+    <section id="itinerary">
+      <h2 class="text-3xl font-semibold mb-4 font-serif">詳細行程</h2>
+      <div class="space-y-6">
+        <!-- Each day card -->
+        <article class="p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-sm">
+          <h3 class="text-2xl font-semibold mb-2">第1天：大阪難波 &amp; Denden Town</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>心齋橋商店街逛街購物（WEGO、潮店）</li>
+            <li>道頓堀步行觀光 &amp; 串炸Daruma</li>
+            <li>Denden Town二手電子/遊戲探索</li>
+          </ul>
+        </article>
+        <article class="p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-sm">
+          <h3 class="text-2xl font-semibold mb-2">第2天：日本橋 &amp; 梅田</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>日本橋電器街（二手手機、Sofmap、Hard Off）</li>
+            <li>大丸梅田Nintendo OSAKA官方店參觀</li>
+            <li>梅田空中庭園夕陽眺望</li>
+          </ul>
+        </article>
+        <article class="p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-sm">
+          <h3 class="text-2xl font-semibold mb-2">第3天：京都宇治 任天堂博物館</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>搭JR或近鐵前往宇治</li>
+            <li>參觀京都任天堂博物館</li>
+            <li>回程順訪伏見稻荷或東寺</li>
+          </ul>
+        </article>
+        <article class="p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-sm">
+          <h3 class="text-2xl font-semibold mb-2">第4天：京都四条 河原町</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>河原町商圈（四条通、寺町、錦市場）</li>
+            <li>高島屋Nintendo KYOTO專賣店朝聖</li>
+            <li>祇園花見小路 &amp; 京豆腐順正料理</li>
+          </ul>
+        </article>
+        <article class="p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-sm">
+          <h3 class="text-2xl font-semibold mb-2">第5天：神戶元町 &amp; 三宮</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>元町高架街Vintage古著店巡禮</li>
+            <li>神戶南京町中華街逛街</li>
+            <li>神戶港塔 &amp; Harborland漫步</li>
+          </ul>
+        </article>
+        <article class="p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-sm">
+          <h3 class="text-2xl font-semibold mb-2">第6天：大阪梅田 &amp; 難波再訪</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>梅田Yodobashi、Bic Camera採購</li>
+            <li>難波串炸或大阪燒回味</li>
+            <li>天王寺新世界庶民美食探索</li>
+          </ul>
+        </article>
+        <article class="p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-sm">
+          <h3 class="text-2xl font-semibold mb-2">第7天：回程前購物 &amp; 伴手禮</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>早晨便利商店輕食</li>
+            <li>關西機場購買伴手禮</li>
+            <li>最後市區紀念品掃貨</li>
+          </ul>
+        </article>
+      </div>
+    </section><!-- 感性話語 Section -->
+<section id="emotional" class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white p-8 rounded-2xl">
+  <h2 class="text-3xl font-semibold mb-4 font-serif">旅程誓言</h2>
+  <p class="text-lg leading-relaxed">
+    每一步在古都京都的石板小巷，都將承載著探索的好奇；
+    在熱鬧的大阪巷弄裡，每一口美食與喧囂，都將鑄就難忘的回憶。
+    神戶港邊的微風，將輕拂我的心房，提醒我：<strong>千言萬語，不如親身體驗。</strong>
+  </p>
+  <p class="mt-4 italic">
+    這趟旅程，不只是打卡拍照，更是一次對自由、熱情與夢想的詠嘆。
+    我懷抱誠摯的心，誓言一定會踏上這片土地，證明這絕非空談的幹話。
+  </p>
+</section>
+
+  </main>  <!-- Footer -->  <footer class="text-center py-4 text-sm text-gray-500 dark:text-gray-400">
+    &copy; 2025 陳民桓之希望這不會成為我的幹話日本行
+  </footer>  <!-- Dark Mode Toggle Script -->  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    const icon = document.getElementById('theme-icon');
+
+    // 初始化主題
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      html.classList.add('dark');
+      icon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    toggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      if (html.classList.contains('dark')) {
+        icon.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        icon.classList.replace('fa-sun', 'fa-moon');
+      }
+    });
+  </script></body>
+</html>
